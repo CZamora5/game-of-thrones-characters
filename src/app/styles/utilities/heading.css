@@ -1,0 +1,9 @@
+.heading {
+  font-size: 1.5rem;
+  text-align: center;
+  color: var(--clr-dark);
+
+  @media screen and (min-width: 36rem) {
+    font-size: 2rem;
+  }
+}

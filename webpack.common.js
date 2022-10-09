@@ -10,12 +10,9 @@ module.exports = {
       },
       {
         test: /\.(svg|png|jpg|gif)$/,
-        use: {
-          loader: 'file-loader',
-          options: {
-            name: '[name].[hash].[ext]',
-            outputPath: 'assets'
-          }
+        type: 'asset',
+        generator: {
+          filename: 'assets/images/[name].[hash].[ext]'
         }
       },
       {
@@ -25,6 +22,13 @@ module.exports = {
           'css-loader',
           'postcss-loader'
         ]
+      },
+      {
+        test: /\.ttf$/,
+        type: 'asset/resource',
+        generator: {
+          filename: 'assets/fonts/[name].[ext]'
+        }
       }
     ]
   }

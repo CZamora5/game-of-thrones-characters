@@ -8,8 +8,7 @@
     width: 60%;
     height: 16rem;
     margin-right: -1.75rem;
-
-    background-image: var(--url, var(--clr-main));
+    background-image: var(--url), url(./app/assets/images/no-image.jpg);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -27,12 +26,14 @@
   }
 
   &__name {
+    font-weight: 700;
     color: var(--clr-accent);
   }
   
   &__title {
     color: var(--clr-gray);
     font-size: 0.75rem;
+    font-weight: 300;
     letter-spacing: 1px;
     text-transform: uppercase;
     margin-top: 0.25rem;
@@ -43,6 +44,7 @@
     right: 10%;
     top: 10%;
     font-size: 3rem;
+    font-weight: 300;
     color: var(--clr-gray);
     opacity: 0.25;
     user-select: none;

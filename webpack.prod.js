@@ -12,7 +12,7 @@ module.exports = merge(common, {
   },
   optimization: {
     minimizer: [
-      ...
+      `...`,
       new HtmlWebpackPlugin({
         template: './src/template.html',
         minify: {

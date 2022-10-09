@@ -1,5 +1,5 @@
 import API from './services/api.service.js';
-import formatNumber from './utils/formatNumber.js'
+import formatNumber from './utils/formatNumber.js';
 
 export default async function run() {
   // Setup
@@ -30,7 +30,7 @@ export default async function run() {
     card.querySelector('.card__img').style.setProperty('--url', `url(${character.imageUrl})`);
     card.querySelector('.card__name').textContent = character.fullName;
     card.querySelector('.card__title').textContent = character.title;
-    card.querySelector('.card__character-id').textContent = '#' + formatNumber(character.id);
+    card.querySelector('.card__character-id').textContent = '#' + formatNumber(parseInt(character.id) + 1);
 
     frag.appendChild(card);
   });

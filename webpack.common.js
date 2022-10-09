@@ -5,26 +5,18 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.html$/,
+        test: /\.html$/i,
         use: ['html-loader']
       },
       {
-        test: /\.(svg|png|jpg|gif)$/,
+        test: /\.(svg|png|jpg|gif)$/i,
         type: 'asset',
         generator: {
           filename: 'assets/images/[name].[hash].[ext]'
         }
       },
       {
-        test: /\.css$/,
-        use: [
-          'style-loader',
-          'css-loader',
-          'postcss-loader'
-        ]
-      },
-      {
-        test: /\.ttf$/,
+        test: /\.(ttf|woff|otf)$/i,
         type: 'asset/resource',
         generator: {
           filename: 'assets/fonts/[name].[ext]'

@@ -1,6 +1,9 @@
 import API from './services/api.service.js';
 import formatNumber from './utils/formatNumber.js';
 
+// Image
+import noImage from './assets/images/no-image.jpg';
+
 export default async function run() {
   // Setup
   const gallery = document.querySelector('.gallery');
@@ -27,7 +30,12 @@ export default async function run() {
   characters.forEach(character => {
     const card = cardTemplate.cloneNode(true);
 
-    card.querySelector('.card__img').style.setProperty('--url', `url(${character.imageUrl})`);
+    const img = card.querySelector('.card__img');
+    img.src = character.imageUrl;
+    img.addEventListener('error', () => {
+      img.src = noImage;
+    });
+
     card.querySelector('.card__name').textContent = character.fullName;
     card.querySelector('.card__title').textContent = character.title;
     card.querySelector('.card__character-id').textContent = '#' + formatNumber(parseInt(character.id) + 1);
